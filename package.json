@@ -1,6 +1,6 @@
 {
   "name": "h3-between",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Find H3 cells between two coordinates or two H3 cells.",
   "homepage": "https://github.com/alrico88/h3-between",
   "license": "MIT",
