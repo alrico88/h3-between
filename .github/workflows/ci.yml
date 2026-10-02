@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Vite+
+        uses: voidzero-dev/setup-vp@v1.21.1
+        with:
+          node-version: 24
+          cache: true
+          run-install: true
+
+      - name: Check formatting and types
+        run: vp run check
+
+      - name: Run tests
+        run: vp run test
+
+      - name: Build packages
+        run: vp run build
