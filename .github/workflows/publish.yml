@@ -25,5 +25,5 @@ jobs:
       - name: Verify package
         run: vp run check && vp run test && vp run build
 
-      - name: Publish to npm with OIDC trusted publishing
-        run: npm publish --access public
+      - name: Publish to npm with OIDC trusted publishing via pnpm
+        run: vp pm publish --provenance --access public --no-git-checks
